@@ -7,14 +7,14 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <body>
-    <!-- Sidebar -->
+    <!-- Sidebar --> <!--Our menu is here-->
     <div class="w3-sidebar w3-bar-block w3-card" style="width:25%;right:0;">
-        <h3 class="w3-bar-item">Actions</h3> <!--Our menu is here-->
+        <h3 class="w3-bar-item">Actions</h3>
         <a href="@Url.Action("Index", "Stack")" class="w3-bar-item w3-button"> Stack</a>
         <a href="@Url.Action("Index", "Queue")" class="w3-bar-item w3-button">  Queue</a>
         <a href="@Url.Action("Index", "Dictionary")" class="w3-bar-item w3-button"> Dictionary</a>
         <a href="@Url.Action("Exit", "Home")" class="w3-bar-item w3-button"> Exit</a>
-     
+
         <div><p class="statusbar">@Html.Raw(ViewBag.DictionaryStatus)</p></div> <!--This is where our viewbag is-->
     </div>
 </body>
