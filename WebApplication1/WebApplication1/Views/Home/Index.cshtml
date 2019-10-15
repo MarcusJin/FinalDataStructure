@@ -1,0 +1,21 @@
+﻿@ViewBag.title Main Page
+
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-bar-block w3-card" style="width:25%;right:0;">
+        <h3 class="w3-bar-item">Actions</h3>
+        <a href="@Url.Action("Index", "Stack")" class="w3-bar-item w3-button"> Stack</a>
+        <a href="@Url.Action("Index", "Queue")" class="w3-bar-item w3-button">  Queue</a>
+        <a href="@Url.Action("Index", "Dictionary")" class="w3-bar-item w3-button"> Dictionary</a>
+        <a href="@Url.Action("Exit", "Home")" class="w3-bar-item w3-button"> Exit</a>
+     
+        <div><p class="statusbar">@Html.Raw(ViewBag.DictionaryStatus)</p></div>
+    </div>
+</body>
+</html>
