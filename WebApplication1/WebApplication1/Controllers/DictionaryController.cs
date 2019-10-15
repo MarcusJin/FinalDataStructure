@@ -13,6 +13,7 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
+
         static Dictionary<string, int> myDictionary = new Dictionary<string, int>();
         //this creates our dictionary
         public ActionResult AddOne()//this method adds an entry to the dictionary
@@ -83,9 +84,6 @@ namespace WebApplication1.Controllers
             TimeSpan ts = sw.Elapsed;
 
             ViewBag.DictionaryStatus += " in " + ts + " seconds.";
-
-
-
 
             //return the code to the view to be displayed
             return View("Index");

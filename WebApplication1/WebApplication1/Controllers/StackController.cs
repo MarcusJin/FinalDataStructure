@@ -60,7 +60,6 @@ namespace TheActualDataStructures.Controllers
         {
             myStack.Clear();
             ViewBag.StackStatus = "Stack now contains " + myStack.Count + " items";
-
             return View("Index");
         }
 
