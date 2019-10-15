@@ -7,9 +7,9 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
 
-    <!-- Sidebar -->
+   
     <div class="w3-sidebar w3-bar-block w3-card" style="width:25%;right:0;">
-        <h3 class="w3-bar-item">Actions</h3> <!--This is the menu for the dictionary-->
+        <h3 class="w3-bar-item">Actions</h3> 
         <a href="@Url.Action("AddOne", "Dictionary")" class="w3-bar-item w3-button">1. Add Item to Dictionary</a>
         <a href="@Url.Action("AddLots", "Dictionary")" class="w3-bar-item w3-button">2. Add Huge List of Items to Dictionary</a>
         <a href="@Url.Action("Display", "Dictionary")" class="w3-bar-item w3-button">3. Display Dictionary</a>
@@ -20,7 +20,7 @@
         <div><p class="statusbar">@Html.Raw(ViewBag.DictionaryStatus)</p></div>
     </div>
 
-    <!-- Page Content -->
+   
     <div style="margin-right:35%">
 
         <div class="w3-container w3-teal">
