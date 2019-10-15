@@ -14,7 +14,7 @@ namespace WebApplication1.Controllers
             return View();
         }
         public ActionResult Exit()
-        {
+        { //this redirects the page to the BYU website 
             return Redirect("https://www.byu.edu");
         }
     }

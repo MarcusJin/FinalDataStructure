@@ -14,15 +14,15 @@ namespace WebApplication1.Controllers
             return View();
         }
         static Dictionary<string, int> myDictionary = new Dictionary<string, int>();
-
-        public ActionResult AddOne()
+        //this creates our dictionary
+        public ActionResult AddOne()//this method adds an entry to the dictionary
         {
             myDictionary.Add("New Entry " + (myDictionary.Count + 1), myDictionary.Count + 1);
             ViewBag.DictionaryStatus = "New Entry " + myDictionary.Count + " has been added!";
             return View("Index");
         }
 
-        public ActionResult AddLots()
+        public ActionResult AddLots()//this method clears what was (if any) in the dictionary and adds 2000 entries
         {
             myDictionary.Clear();
 
@@ -34,7 +34,7 @@ namespace WebApplication1.Controllers
             return View("Index");
         }
 
-        public ActionResult Display()
+        public ActionResult Display() //this method displays the entire dictionary
         {
 
             ViewBag.theDictionary = myDictionary;
@@ -42,7 +42,7 @@ namespace WebApplication1.Controllers
             return View("Index");
         }
 
-        public ActionResult Delete()
+        public ActionResult Delete() //this method deletes an item in the dictionary (the last item) if there is stuff in the dictionary
         {
             if (myDictionary.Count == 0)
             { ViewBag.DictionaryStatus = "There are no items in the Dictionary"; }
@@ -56,14 +56,14 @@ namespace WebApplication1.Controllers
         }
 
         public ActionResult Clear()
-        {
+        { //This method clears the entire dictionary
             myDictionary.Clear();
             ViewBag.DictionaryStatus = "Dictionary now contains " + myDictionary.Count + " items";
 
             return View("Index");
         }
 
-        public ActionResult Search()
+        public ActionResult Search() //this method searches for entry 20 and contains a stopwatch to time how long it takes
         {
             System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
 
@@ -79,7 +79,7 @@ namespace WebApplication1.Controllers
             }
 
             sw.Stop();
-
+            //this is the end of the stopwatch
             TimeSpan ts = sw.Elapsed;
 
             ViewBag.DictionaryStatus += " in " + ts + " seconds.";
@@ -87,7 +87,7 @@ namespace WebApplication1.Controllers
 
 
 
-
+            //return the code to the view to be displayed
             return View("Index");
         }
 

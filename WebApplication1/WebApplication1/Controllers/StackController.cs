@@ -9,21 +9,21 @@ namespace TheActualDataStructures.Controllers
     public class StackController : Controller
     {
         static Stack<string> myStack = new Stack<string>();
-
+        //create our stack
         // GET: Stack
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult AddOne()
+        public ActionResult AddOne()//add an entry to the stack
         {
             myStack.Push("New Entry " + (myStack.Count + 1));
             ViewBag.StackStatus = myStack.Peek() + " has been added!";
             return View("Index");
         }
 
-        public ActionResult AddLots()
+        public ActionResult AddLots() //clear what was in the stack and then add 2000 entries to the stack
         {
             myStack.Clear();
 
@@ -35,7 +35,7 @@ namespace TheActualDataStructures.Controllers
             return View("Index");
         }
 
-        public ActionResult Display()
+        public ActionResult Display() //display the stack to the viewbag
         {
 
             ViewBag.TheStack = myStack;
@@ -43,7 +43,7 @@ namespace TheActualDataStructures.Controllers
             return View("Index");
         }
 
-        public ActionResult Delete()
+        public ActionResult Delete() //delete an item from the stack if there is something in the stack
         {
             if (myStack.Count == 0)
             { ViewBag.StackStatus = "There are no items in the stack"; }
@@ -56,7 +56,7 @@ namespace TheActualDataStructures.Controllers
             return View("Index");
         }
 
-        public ActionResult Clear()
+        public ActionResult Clear() //clear the entire stack
         {
             myStack.Clear();
             ViewBag.StackStatus = "Stack now contains " + myStack.Count + " items";
@@ -64,7 +64,7 @@ namespace TheActualDataStructures.Controllers
             return View("Index");
         }
 
-        public ActionResult Search()
+        public ActionResult Search() //search for entry 20 in the stack and do a stopwatch to time the search
         {
             System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
 
