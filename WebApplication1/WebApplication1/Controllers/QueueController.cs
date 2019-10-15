@@ -9,7 +9,7 @@ namespace TheActualDataStructures.Controllers
     public class QueueController : Controller
     {
 
-        static Queue<string> myQ = new Queue<string>(); 
+        static Queue<string> myQueue = new Queue<string>(); 
 
         // GET: Queue
         public ActionResult Index()
@@ -18,19 +18,19 @@ namespace TheActualDataStructures.Controllers
         }
         public ActionResult AddOne()
         {
-            myQ.Enqueue("New Entry " + (myQ.Count + 1));
-            ViewBag.QueueStatus = "New Entry " + myQ.Count + " has been added!";
+            myQueue.Enqueue("New Entry " + (myQueue.Count + 1));
+            ViewBag.QueueStatus = "New Entry " + myQueue.Count + " has been added!";
             return View("Index");
         }
 
         public ActionResult AddLots()
         {
-            myQ.Clear();
+            myQueue.Clear();
 
             for (int i = 0; i < 2000; i++)
             {
-                myQ.Enqueue("New Entry " + (myQ.Count + 1));
-                ViewBag.QueueStatus = "Queue now contains " + myQ.Count + " items";
+                myQueue.Enqueue("New Entry " + (myQueue.Count + 1));
+                ViewBag.QueueStatus = "Queue now contains " + myQueue.Count + " items";
             }
             return View("Index");
         }
@@ -38,19 +38,19 @@ namespace TheActualDataStructures.Controllers
         public ActionResult Display()
         {
 
-            ViewBag.theQueue = myQ;
+            ViewBag.theQueue = myQueue;
 
             return View("Index");
         }
 
         public ActionResult Delete()
         {
-            if (myQ.Count == 0)
+            if (myQueue.Count == 0)
             { ViewBag.QueueStatus = "There are no items in the Queue"; }
             else
             {
-                myQ.Dequeue();
-                ViewBag.QueueStatus = "Deleted item # " + (myQ.Count + 1);
+                myQueue.Dequeue();
+                ViewBag.QueueStatus = "Deleted item # " + (myQueue.Count + 1);
 
             }
             return View("Index");
@@ -58,8 +58,8 @@ namespace TheActualDataStructures.Controllers
 
         public ActionResult Clear()
         {
-            myQ.Clear();
-            ViewBag.QueueStatus = "Queue now contains " + myQ.Count + " items";
+            myQueue.Clear();
+            ViewBag.QueueStatus = "Queue now contains " + myQueue.Count + " items";
 
             return View("Index");
         }
@@ -70,13 +70,13 @@ namespace TheActualDataStructures.Controllers
 
             sw.Start();
 
-            if (myQ.Contains("New Entry 20"))
+            if (myQueue.Contains("New Entry 20"))
             {
                 ViewBag.QueueStatus = "Found";
             }
             else
             {
-                ViewBag.QueueStatus = "Not Found"; ;
+                ViewBag.QueueStatus = "Not Found";
             }
 
             sw.Stop();
