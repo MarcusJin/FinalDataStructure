@@ -75,7 +75,7 @@ namespace TheActualDataStructures.Controllers
             }
             else
             {
-                ViewBag.StackStatus = "Not Found"; ;
+                ViewBag.StackStatus = "Not Found";
             }
 
             sw.Stop();
